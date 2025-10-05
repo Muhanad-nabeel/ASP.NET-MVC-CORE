@@ -1,0 +1,38 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" asp-controller="Employees" method="post">
+    <table class="table table-bordered">
+
+        <tr>
+            <td><label asp-for="EmployeeId">Employeer ID</label></td>
+            <td><input asp-for="EmployeeId" class="form-control" required /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="EmployeeName">Employeer Name</label></td>
+            <td><input asp-for="EmployeeName" class="form-control" required /></td>
+        </tr>
+
+        <tr>
+            <td><label asp-for="Salary">Salary</label></td>
+            <td><input asp-for="Salary" class="form-control" required /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="HDate">HDate</label></td>
+            <td><input asp-for="HDate" class="form-control" required /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create" class="btn btn-outline-success" />
+                <a asp-action="AllEmployees"asp-controller="Employees" class="btn btn-close" >Cancel </a>
+    </td>
+        </tr>
+    </table>
+
+</form>

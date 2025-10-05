@@ -1,0 +1,53 @@
+﻿<!--// receive obj -->
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "AllEmployees";
+}
+
+<h1>AllEmployees</h1>
+<br />
+<a asp-action="Create" asp-controller="Employees" class="btn btn-outline-success">Create </a>
+<br />
+
+@if (Model.Any())
+{
+
+    <table class="table table-bordered">
+        <thead>
+
+            <tr>
+                <th>Employee Name</th>
+                <th>Salary</th>
+                <th>Hdate</th>
+                <th>Is Active</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.Salary</td>
+                    <td>@item.HDate</td>
+                    <td>@item.IsActive</td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Employees" asp-route-id="@item.EmployeeId" class="btn btn-primary">Read More</a>
+                        <a asp-action="Delete" asp-controller="Employees" asp-route-id="@item.EmployeeId" class="btn btn-danger">Delete</a>
+                        <a asp-action="Edit" asp-controller="Employees" asp-route-id="@item.EmployeeId" class="btn btn-secondary">Edit</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+
+
+
+    </table>
+}
+else
+{
+<div class="alert alert-warning">No Data Please press on Create a new Employee</div>
+}

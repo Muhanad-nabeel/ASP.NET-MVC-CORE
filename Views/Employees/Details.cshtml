@@ -1,0 +1,27 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<p>Welcome @Model.EmployeeName </p>
+<br />
+<p>your salary is  @Model.Salary </p>
+<br />
+<p>your Hiring Date  is  @Model.HDate </p>
+<br />
+<p>
+    your status is :
+    @if (Model.IsActive == true)
+    {
+        <span class="text-success">Active </span>
+    }
+    else
+    {
+
+    <span class="text-danger">Not Active </span>
+    }
+
+    
+</p>
